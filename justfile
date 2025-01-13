@@ -1,2 +1,6 @@
 default:
-	just --list
+  just --list
+
+pre-commit:
+  ruff format src
+
