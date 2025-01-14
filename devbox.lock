@@ -1,6 +1,54 @@
 {
   "lockfile_version": "1",
   "packages": {
+    "pyright@latest": {
+      "last_modified": "2024-12-23T21:10:33Z",
+      "resolved": "github:NixOS/nixpkgs/de1864217bfa9b5845f465e771e0ecb48b30e02d#pyright",
+      "source": "devbox-search",
+      "version": "1.1.382",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/jcbqc89icjaxlqjjz98ndljsy19hj7za-pyright-1.1.382",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/jcbqc89icjaxlqjjz98ndljsy19hj7za-pyright-1.1.382"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/mbbzkqx4c2k79g83r0gqpx48qxzjcz8y-pyright-1.1.382",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/mbbzkqx4c2k79g83r0gqpx48qxzjcz8y-pyright-1.1.382"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/adzvhds67hjfyscnswkjmzm63ssrx22v-pyright-1.1.382",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/adzvhds67hjfyscnswkjmzm63ssrx22v-pyright-1.1.382"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/h38my8ihfmd19gma5k0xzdsdcy3anp5v-pyright-1.1.382",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/h38my8ihfmd19gma5k0xzdsdcy3anp5v-pyright-1.1.382"
+        }
+      }
+    },
     "ruff@0.8": {
       "last_modified": "2025-01-05T01:56:15Z",
       "resolved": "github:NixOS/nixpkgs/bf689c40d035239a489de5997a4da5352434632e#ruff",
