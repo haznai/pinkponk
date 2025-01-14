@@ -1,9 +1,5 @@
-import os
 import httpx
 from dataclasses import dataclass
-
-READWISE_API_KEY = os.getenv("READWISE_API_KEY", default=None)
-assert READWISE_API_KEY is not None, "READWISE_API_KEY not found"
 
 
 @dataclass(frozen=True, slots=True)
@@ -25,7 +21,7 @@ async def get_list_of_all_articles(READWISE_API_KEY: str) -> list[ReadwiseItem] 
                 # page_cursor is for pagination
                 params={"pageCursor": next_page_cursor}
                 if next_page_cursor is not None
-                else {},
+                else None,
             )
 
             if response.is_error:
