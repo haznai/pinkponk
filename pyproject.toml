@@ -8,3 +8,8 @@ dependencies = [
     "anyio==4.8.*",
     "httpx==0.28.*",
 ]
+
+[dependency-groups]
+dev = [
+    "nest-asyncio>=1.6.0",
+]
