@@ -5,7 +5,6 @@ description = "inbox zero is a pink feeling"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "anyio==4.8.*",
     "httpx==0.28.*",
 ]
 

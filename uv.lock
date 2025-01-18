@@ -125,7 +125,6 @@ name = "pinkponk"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
-    { name = "anyio" },
     { name = "httpx" },
 ]
 
@@ -136,10 +135,7 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [
-    { name = "anyio", specifier = "==4.8.*" },
-    { name = "httpx", specifier = "==0.28.*" },
-]
+requires-dist = [{ name = "httpx", specifier = "==0.28.*" }]
 
 [package.metadata.requires-dev]
 dev = [
