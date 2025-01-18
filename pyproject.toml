@@ -12,4 +12,5 @@ dependencies = [
 [dependency-groups]
 dev = [
     "nest-asyncio>=1.6.0",
+    "tryceratops>=2.4.1",
 ]
