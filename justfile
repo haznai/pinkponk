@@ -1,11 +1,10 @@
 default:
   just --list
 
-pre-commit: test
-  ruff format src
-  ruff check src
-  pyright
-  tryceratops src
+pre-commit: format test
+
+format: 
+  swift format pinkponk --recursive --in-place
 
 test:
-  pytest
+  xcodebuild test
