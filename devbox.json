@@ -1,9 +1,6 @@
 {
-  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.13.7/.schema/devbox.schema.json",
-  "packages": [
-    "ruff@0.8",
-    "pyright@latest"
-  ],
+  "$schema":  "https://raw.githubusercontent.com/jetify-com/devbox/0.13.7/.schema/devbox.schema.json",
+  "packages": [],
   "shell": {
     "init_hook": [
       "source .venv/bin/activate"
