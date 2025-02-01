@@ -1,4 +1,53 @@
 {
   "lockfile_version": "1",
-  "packages": {}
+  "packages": {
+    "sqldef@0.17": {
+      "last_modified": "2025-01-29T07:48:22Z",
+      "resolved": "github:NixOS/nixpkgs/9a5db3142ce450045840cc8d832b13b8a2018e0c#sqldef",
+      "source": "devbox-search",
+      "version": "0.17.28",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/pxc0yplr0qzzad8nvg9qh1bqgdp2mrm1-sqldef-0.17.28",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/pxc0yplr0qzzad8nvg9qh1bqgdp2mrm1-sqldef-0.17.28"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/pimkba0ncyzl9bgr28xh24nyfdx0w6fr-sqldef-0.17.28",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/pimkba0ncyzl9bgr28xh24nyfdx0w6fr-sqldef-0.17.28"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/8q4ny89l5ys90sdd4s7q8gmyprhmmq3q-sqldef-0.17.28",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/8q4ny89l5ys90sdd4s7q8gmyprhmmq3q-sqldef-0.17.28"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/26pwbniqw1wmw66d0wdbjjzxm8q970vl-sqldef-0.17.28",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/26pwbniqw1wmw66d0wdbjjzxm8q970vl-sqldef-0.17.28"
+        }
+      }
+    }
+  }
 }

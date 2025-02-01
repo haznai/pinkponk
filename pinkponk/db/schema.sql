@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS readwise_items (
+    id TEXT PRIMARY KEY NOT NULL,
+    url TEXT NOT NULL,
+    title TEXT,
+    created_at TEXT NOT NULL DEFAULT (CURRENT_TIMESTAMP)
+) STRICT;
