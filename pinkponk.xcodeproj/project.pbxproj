@@ -8,16 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		E52B19B62D4BBC520053DBA3 /* AsyncHTTPClient in Frameworks */ = {isa = PBXBuildFile; productRef = E52B19B52D4BBC520053DBA3 /* AsyncHTTPClient */; };
+		E5B5A7942D4BC003009DA117 /* AsyncHTTPClient in Frameworks */ = {isa = PBXBuildFile; productRef = E5B5A7932D4BC003009DA117 /* AsyncHTTPClient */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E5B5A78D2D4BBEC4009DA117 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E56E37A02D4BB8F000E94D77 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E56E37A72D4BB8F000E94D77;
+			remoteInfo = pinkponk;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E56E37A82D4BB8F000E94D77 /* pinkponk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pinkponk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5B5A7892D4BBEC4009DA117 /* tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		E50F84C32D4BB923003A308E /* pinkponk */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = pinkponk;
+			sourceTree = "<group>";
+		};
+		E5B5A78A2D4BBEC4009DA117 /* tests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = tests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -31,6 +48,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E5B5A7862D4BBEC4009DA117 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5B5A7942D4BC003009DA117 /* AsyncHTTPClient in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -38,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				E50F84C32D4BB923003A308E /* pinkponk */,
+				E5B5A78A2D4BBEC4009DA117 /* tests */,
 				E56E37A92D4BB8F000E94D77 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				E56E37A82D4BB8F000E94D77 /* pinkponk.app */,
+				E5B5A7892D4BBEC4009DA117 /* tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,6 +103,30 @@
 			productReference = E56E37A82D4BB8F000E94D77 /* pinkponk.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E5B5A7882D4BBEC4009DA117 /* tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5B5A7912D4BBEC4009DA117 /* Build configuration list for PBXNativeTarget "tests" */;
+			buildPhases = (
+				E5B5A7852D4BBEC4009DA117 /* Sources */,
+				E5B5A7862D4BBEC4009DA117 /* Frameworks */,
+				E5B5A7872D4BBEC4009DA117 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E5B5A78E2D4BBEC4009DA117 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				E5B5A78A2D4BBEC4009DA117 /* tests */,
+			);
+			name = tests;
+			packageProductDependencies = (
+				E5B5A7932D4BC003009DA117 /* AsyncHTTPClient */,
+			);
+			productName = tests;
+			productReference = E5B5A7892D4BBEC4009DA117 /* tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -88,6 +139,10 @@
 				TargetAttributes = {
 					E56E37A72D4BB8F000E94D77 = {
 						CreatedOnToolsVersion = 16.2;
+					};
+					E5B5A7882D4BBEC4009DA117 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = E56E37A72D4BB8F000E94D77;
 					};
 				};
 			};
@@ -109,12 +164,20 @@
 			projectRoot = "";
 			targets = (
 				E56E37A72D4BB8F000E94D77 /* pinkponk */,
+				E5B5A7882D4BBEC4009DA117 /* tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E56E37A62D4BB8F000E94D77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5B5A7872D4BBEC4009DA117 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -131,7 +194,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E5B5A7852D4BBEC4009DA117 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E5B5A78E2D4BBEC4009DA117 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E56E37A72D4BB8F000E94D77 /* pinkponk */;
+			targetProxy = E5B5A78D2D4BBEC4009DA117 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		E56E37B52D4BB8F100E94D77 /* Debug */ = {
@@ -269,11 +347,15 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hazn.pinkponk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
 				SWIFT_VERSION = 5.0;
+				_EXPERIMENTAL_SWIFT_EXPLICIT_MODULES = YES;
 			};
 			name = Debug;
 		};
@@ -294,11 +376,47 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hazn.pinkponk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
 				SWIFT_VERSION = 5.0;
+				_EXPERIMENTAL_SWIFT_EXPLICIT_MODULES = YES;
+			};
+			name = Release;
+		};
+		E5B5A78F2D4BBEC4009DA117 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hazn.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pinkponk.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/pinkponk";
+			};
+			name = Debug;
+		};
+		E5B5A7902D4BBEC4009DA117 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hazn.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pinkponk.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/pinkponk";
 			};
 			name = Release;
 		};
@@ -323,6 +441,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		E5B5A7912D4BBEC4009DA117 /* Build configuration list for PBXNativeTarget "tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5B5A78F2D4BBEC4009DA117 /* Debug */,
+				E5B5A7902D4BBEC4009DA117 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -338,6 +465,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		E52B19B52D4BBC520053DBA3 /* AsyncHTTPClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E52B19B42D4BBC520053DBA3 /* XCRemoteSwiftPackageReference "async-http-client" */;
+			productName = AsyncHTTPClient;
+		};
+		E5B5A7932D4BC003009DA117 /* AsyncHTTPClient */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E52B19B42D4BBC520053DBA3 /* XCRemoteSwiftPackageReference "async-http-client" */;
 			productName = AsyncHTTPClient;
