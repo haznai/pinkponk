@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E5284B9E2D58E18F00A3D37B /* Lighter in Frameworks */ = {isa = PBXBuildFile; productRef = E5284B9D2D58E18F00A3D37B /* Lighter */; };
 		E52B19B62D4BBC520053DBA3 /* AsyncHTTPClient in Frameworks */ = {isa = PBXBuildFile; productRef = E52B19B52D4BBC520053DBA3 /* AsyncHTTPClient */; };
 		E5B5A7942D4BC003009DA117 /* AsyncHTTPClient in Frameworks */ = {isa = PBXBuildFile; productRef = E5B5A7932D4BC003009DA117 /* AsyncHTTPClient */; };
 /* End PBXBuildFile section */
@@ -26,9 +27,22 @@
 		E5B5A7892D4BBEC4009DA117 /* tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		E5284BA92D58E37000A3D37B /* Exceptions for "pinkponk" folder in "pinkponk" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				db/schema.sqlschema,
+			);
+			target = E56E37A72D4BB8F000E94D77 /* pinkponk */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		E50F84C32D4BB923003A308E /* pinkponk */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E5284BA92D58E37000A3D37B /* Exceptions for "pinkponk" folder in "pinkponk" target */,
+			);
 			path = pinkponk;
 			sourceTree = "<group>";
 		};
@@ -44,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5284B9E2D58E18F00A3D37B /* Lighter in Frameworks */,
 				E52B19B62D4BBC520053DBA3 /* AsyncHTTPClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,6 +106,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				E5284BA02D58E1D100A3D37B /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				E50F84C32D4BB923003A308E /* pinkponk */,
@@ -98,6 +114,7 @@
 			name = pinkponk;
 			packageProductDependencies = (
 				E52B19B52D4BBC520053DBA3 /* AsyncHTTPClient */,
+				E5284B9D2D58E18F00A3D37B /* Lighter */,
 			);
 			productName = pinkponk;
 			productReference = E56E37A82D4BB8F000E94D77 /* pinkponk.app */;
@@ -134,6 +151,9 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
@@ -157,6 +177,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				E52B19B42D4BBC520053DBA3 /* XCRemoteSwiftPackageReference "async-http-client" */,
+				E5284B9C2D58E18F00A3D37B /* XCRemoteSwiftPackageReference "Lighter" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E56E37A92D4BB8F000E94D77 /* Products */;
@@ -204,6 +225,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E5284BA02D58E1D100A3D37B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = E5284B9F2D58E1D100A3D37B /* Enlighter */;
+		};
 		E5B5A78E2D4BBEC4009DA117 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E56E37A72D4BB8F000E94D77 /* pinkponk */;
@@ -339,7 +364,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"pinkponk/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "pinkponk/Preview\\ Content";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -354,7 +379,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				_EXPERIMENTAL_SWIFT_EXPLICIT_MODULES = YES;
 			};
 			name = Debug;
@@ -368,7 +393,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"pinkponk/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "pinkponk/Preview\\ Content";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -383,7 +408,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				_EXPERIMENTAL_SWIFT_EXPLICIT_MODULES = YES;
 			};
 			name = Release;
@@ -453,6 +478,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E5284B9C2D58E18F00A3D37B /* XCRemoteSwiftPackageReference "Lighter" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Lighter-swift/Lighter";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.10;
+			};
+		};
 		E52B19B42D4BBC520053DBA3 /* XCRemoteSwiftPackageReference "async-http-client" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/swift-server/async-http-client";
@@ -464,6 +497,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E5284B9D2D58E18F00A3D37B /* Lighter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5284B9C2D58E18F00A3D37B /* XCRemoteSwiftPackageReference "Lighter" */;
+			productName = Lighter;
+		};
+		E5284B9F2D58E1D100A3D37B /* Enlighter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5284B9C2D58E18F00A3D37B /* XCRemoteSwiftPackageReference "Lighter" */;
+			productName = "plugin:Enlighter";
+		};
 		E52B19B52D4BBC520053DBA3 /* AsyncHTTPClient */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E52B19B42D4BBC520053DBA3 /* XCRemoteSwiftPackageReference "async-http-client" */;

@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS readwise_items (
+CREATE TABLE IF NOT EXISTS readwise(
     id TEXT PRIMARY KEY NOT NULL,
     url TEXT NOT NULL,
     title TEXT,

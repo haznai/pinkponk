@@ -10,4 +10,4 @@ test:
   xcodebuild test
 
 update-schema:
-  sqlite3def pinkponk/db/data.db < pinkponk/db/schema.sql
+  sqlite3def pinkponk/db/data.db < pinkponk/db/schema.sqlschema

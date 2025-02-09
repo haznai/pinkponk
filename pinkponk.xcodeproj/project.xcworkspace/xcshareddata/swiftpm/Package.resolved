@@ -1,5 +1,5 @@
 {
-  "originHash" : "a0a7743bf2eda21e084bcb1ab07bc98bfcd228fc8dfa19b77c883f6e7f485f6c",
+  "originHash" : "5b9826c39bddf84b310b075b521c6417e578a7bec991b726bebd2766036d8cbe",
   "pins" : [
     {
       "identity" : "async-http-client",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "60fa3dcfc52d09ed0411e9c4bc99928bf63656bd",
         "version" : "1.24.2"
+      }
+    },
+    {
+      "identity" : "lighter",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Lighter-swift/Lighter",
+      "state" : {
+        "revision" : "c7d9e9ce06a08fa54fb5cd792ffc3dcd396ccd68",
+        "version" : "1.4.10"
       }
     },
     {
