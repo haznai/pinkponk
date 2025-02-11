@@ -1,5 +1,3 @@
-// todo: remove this header comment
-
 import Testing
 
 struct tests {
