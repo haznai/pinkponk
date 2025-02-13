@@ -14,3 +14,6 @@ build:
 
 update-schema:
     sqlite3def pinkponk/db/data.db < pinkponk/db/schema.sqlschema
+
+delete-derived-data:
+    rm -rf ~/Library/Developer/Xcode/DerivedData/
