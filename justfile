@@ -7,10 +7,11 @@ format:
     swift format pinkponk --recursive --in-place
 
 test:
-    xcodebuild test -scheme pinkponk
+  tuist test
+  
 
 build:
-    xcodebuild
+  tuist build
 
 update-schema:
     sqlite3def pinkponk/db/data.db < pinkponk/db/schema.sqlschema

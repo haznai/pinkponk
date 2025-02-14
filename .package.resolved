@@ -1,0 +1,15 @@
+{
+  "originHash" : "e7af8eaa60f511efce3c0f738f6738a15646fece37e95dc79f1920a00e68bafd",
+  "pins" : [
+    {
+      "identity" : "lighter",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Lighter-swift/Lighter",
+      "state" : {
+        "revision" : "c7d9e9ce06a08fa54fb5cd792ffc3dcd396ccd68",
+        "version" : "1.4.10"
+      }
+    }
+  ],
+  "version" : 3
+}
