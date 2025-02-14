@@ -20,6 +20,5 @@ let package = Package(
     // By the derivatives of the Enlighter Build tool Plugin.
     .package(url: "https://github.com/Lighter-swift/Lighter", from: "1.4.10"),
     .package(url: "https://github.com/pointfreeco/swift-snapshot-testing", from: "1.18.0"),
-  ],
-  swiftLanguageModes: [.v6]
+  ]
 )
