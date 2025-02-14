@@ -1,10 +1,10 @@
 {
-  "$schema":  "https://raw.githubusercontent.com/jetify-com/devbox/0.13.7/.schema/devbox.schema.json",
-  "packages": ["sqldef@0.17"],
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.13.7/.schema/devbox.schema.json",
+  "packages": [
+    "sqldef@0.17"
+  ],
   "shell": {
-    "init_hook": [
-      "source .venv/bin/activate"
-    ],
+    "init_hook": [],
     "scripts": {
       "test": [
         "echo \"Error: no test specified\" && exit 1"
