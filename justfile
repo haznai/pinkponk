@@ -4,7 +4,7 @@ default:
 pre-commit: format test
 
 format:
-    swift format pinkponk --recursive --in-place
+    swift format . --recursive --in-place
 
 test:
   tuist test
