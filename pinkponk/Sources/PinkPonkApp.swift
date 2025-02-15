@@ -4,7 +4,7 @@ import SwiftUI
 struct PinkPonkApp: App {
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      ContentView(readwiseActor: ReadwiseRepository())
     }
   }
 }
