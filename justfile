@@ -8,6 +8,12 @@ format:
 
 test:
   tuist test
+
+edit:
+  tuist edit
+
+generate:
+  tuist generate
   
 
 build:
