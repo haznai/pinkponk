@@ -22,11 +22,47 @@ class ReadwiseRepository: ActorRepository {
   private(set) var state: [Row] = []
 
   init() {
-    self.db = Data.module
+    // todo: check if data is actually saved
+    // todo: check if there's a connetionhandler problem, or a better way or something
+    self.db = Data.init(url: Bundle.module.url(forResource: "data", withExtension: "db")!)
   }
 
   // todo: add cursor/pagination
-  // todo: typed throws
+  // todo: typed throws, or no throws at all?
+  // todo: refactor this into a general method in a protoco/abstract class/whatever
+  /// The dataflow us there
+  ///
+  /// Dataflow is like
+  ///  .───────────────.
+  /// (                 )
+  /// │`───────────────'│
+  /// │                 │ ┌──────────────────────────────┐
+  /// │    persisted    │ │ 1: sync state with database  │
+  /// │      data       │ └──────────────────────────────┘
+  /// (                 )                 │
+  ///  `───────────────'                  │
+  ///                                     │
+  ///                                     │
+  ///  ┌──────────────┐                   ▼
+  ///  │              │   ┌──────────────────────────────┐
+  ///  │ api response │   │  2: fetch data from server   │
+  ///  │              │   └──────────────────────────────┘
+  ///  └──────────────┘                   │
+  ///          ║                          │
+  ///          ◈                          │
+  ///  .───────────────.                  │
+  /// (                 )                 ▼
+  /// │`───────────────'│ ┌──────────────────────────────┐
+  /// │                 │ │3: upsert response to database│
+  /// │    persisted    │ └──────────────────────────────┘
+  /// │      data       │                 │
+  /// (                 )                 │
+  ///  `───────────────'                  │
+  ///                                     │
+  ///                                     ▼
+  ///                     ┌──────────────────────────────┐
+  ///                     │ 4: sync state with database  │
+  ///                     └──────────────────────────────┘
   func updateState(_ apiKey: String?) async throws {
     // todo: more elegant error handling
     guard let apiKey else {
@@ -37,7 +73,7 @@ class ReadwiseRepository: ActorRepository {
     }
 
     if self.state.isEmpty {
-      self.state = try! await self.db.readwises.fetch()
+      self.state = try await self.db.readwises.fetch()
     }
 
     let request = self.getRequest(with: apiKey)
@@ -50,15 +86,27 @@ class ReadwiseRepository: ActorRepository {
 
     // todo: make definition of response also part of the protocol definition
     struct ReadwiseResponse: Codable {
-      let results: [Readwise]
+      let results: [Row]
       let nextPageCursor: String?
     }
 
     let body = try await response.body.collect(upTo: 10240 * 1024)  // 10 Mb
 
-    let readwiseResponse = try JSONDecoder().decode(ReadwiseResponse.self, from: body)
+    let decodedResponse = try JSONDecoder().decode(ReadwiseResponse.self, from: body)
 
-    self.state = readwiseResponse.results
+    let persistedRowIds = Set(self.state.map(\.id))
+    let recordsToUpdate = decodedResponse.results.filter { persistedRowIds.contains($0.id) }
+    let recordsToInsert = decodedResponse.results.filter { !persistedRowIds.contains($0.id) }
+
+    // todo: check that the updates work as expected
+    try await self.db.transaction { tx in
+      try tx.update(recordsToUpdate)
+      try tx.insert(recordsToInsert)
+    }
+
+    // todo: check that we have no data loss
+    // todo: make this more general, check above for the same call
+    self.state = try await self.db.readwises.fetch()
   }
 
   func getRequest(with apikey: String) -> HTTPClientRequest {
