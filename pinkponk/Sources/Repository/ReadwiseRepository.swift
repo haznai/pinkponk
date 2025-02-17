@@ -1,11 +1,12 @@
 import AsyncHTTPClient
 import Foundation
 import Lighter
+import SQLite3
 
 // MARK: - Protocol definition
 // todo: refactor this entire file
 // todo: make Repository's a module
-protocol ActorRepository {
+protocol ActorRepository: AnyObject {
   // associated table has to be exit in `schema.sqlschema`
   associatedtype Row: SQLKeyedTableRecord
   // todo: cleaner api design without optional api key
@@ -16,22 +17,31 @@ protocol ActorRepository {
 // todo: refactor into a module and make only state public
 @Observable
 @MainActor
-class ReadwiseRepository: ActorRepository {
+final class ReadwiseRepository: ActorRepository {
   typealias Row = Readwise
-  private let db: Data
-  private(set) var state: [Row] = []
+  private let db: ApplicationDatabase
+  private(set) var state: [Row]
 
+  // todo: make database a singleton
+  // todo: figure out connection
+  // todo: ensure database always has schema loaded
   init() {
-    // todo: check if data is actually saved
-    // todo: check if there's a connetionhandler problem, or a better way or something
-    self.db = Data.init(url: Bundle.module.url(forResource: "data", withExtension: "db")!)
+    let url = URL.documentsDirectory.appending(path: "db.sqlite")
+    if !FileManager.default.fileExists(atPath: url.path) {
+      FileManager.default.createFile(atPath: url.path, contents: nil)
+      let cpath = url.path(percentEncoded: false).cString(using: .utf8)
+      var db: OpaquePointer!
+      let rc = sqlite3_create_applicationdatabase(
+        cpath, SQLITE_OPEN_CREATE | SQLITE_OPEN_READWRITE, &db)
+      guard rc == SQLITE_OK else { fatalError("Failed to create database connection") }
+    }
+    self.db = ApplicationDatabase(url: url)
+    self.state = []
   }
 
   // todo: add cursor/pagination
   // todo: typed throws, or no throws at all?
   // todo: refactor this into a general method in a protoco/abstract class/whatever
-  /// The dataflow us there
-  ///
   /// Dataflow is like
   ///  .───────────────.
   /// (                 )
