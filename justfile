@@ -7,7 +7,7 @@ format:
     swift format . --recursive --in-place
 
 test:
-  tuist test
+  tuist test --retry-count 1
 
 edit:
   tuist edit
