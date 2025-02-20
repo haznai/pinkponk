@@ -14,13 +14,13 @@ edit:
 
 generate:
   tuist generate
-  
 
 build:
   tuist build
 
 update-schema:
-    sqlite3def pinkponk/db/data.db < pinkponk/db/schema.sqlschema
+    devbox run sqlite3def  ~/Documents/db.sqlite  < pinkponk/Resources/ApplicationDatabase.sql
+    @echo -e "\033[1;31mWarning: The ApplicationDatabase.swift file now has to be recreated.\033[0m"
 
 delete-derived-data:
     sudo rm -rf ~/Library/Developer/Xcode/DerivedData/

@@ -11,12 +11,6 @@ func baseSettings() -> SettingsDictionary {
 
 let project = Project(
   name: "pinkponk",
-  packages: [
-    .remote(
-      // This is declaration for the "Enlighter" Plugin, the `Package.swift` file has the
-      // declaration for the "Lighter" Dependency
-      url: "https://github.com/Lighter-swift/Lighter", requirement: .upToNextMajor(from: "1.4.10"))
-  ],
   targets: [
     .target(
       name: "pinkponk",
@@ -29,8 +23,6 @@ let project = Project(
       resources: ["pinkponk/Resources/**"],
       dependencies: [
         .external(name: "AsyncHTTPClient"),
-        .package(product: "Enlighter", type: .plugin),
-        .external(name: "Lighter"),
         .external(name: "InlineSnapshotTesting"),
       ],
       settings: Settings.settings(
