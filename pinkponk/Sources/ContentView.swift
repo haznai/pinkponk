@@ -2,8 +2,6 @@ import SwiftUI
 
 // MARK - ContentView
 struct ContentView: View {
-  // todo: refactor/make it more genral
-  @State private var apiKey: String = ""
   // todo: refactor out
   // todo: make singleton
   @State private var readwiseActor: ReadwiseRepository
@@ -17,13 +15,12 @@ struct ContentView: View {
       ArticleListView(ArticleList: readwiseActor.state)
     }
     VStack {
-      SecureField("Readwise API Key", text: $apiKey)
       Button("let's get this bread") {
         Task {
           // todo: make anki card that
           // task without `do` `catch` silently swallows errors
           do {
-            try await readwiseActor.updateState(self.apiKey)
+            try await readwiseActor.updateState()
           } catch {
             print("Error: \(error)")
             //todo: better error handling
@@ -49,6 +46,6 @@ struct ArticleListView: View {
 
 #Preview {
   ArticleListView(ArticleList: [
-    ReadwiseRepository.Row(id: "test-id", url: "test-url", title: "test-title")
+    ReadwiseRepository.Row(id: "test-id", url: "test-url", title: "test-title", createdAt: nil)
   ])
 }

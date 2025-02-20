@@ -4,7 +4,10 @@ import SwiftUI
 struct PinkPonkApp: App {
   var body: some Scene {
     WindowGroup {
-      ContentView(readwiseActor: ReadwiseRepository())
+      // todo: environmental actors here? -> see anki notes or swift docu on thos
+      // https://developer.apple.com/documentation/swiftui/managing-model-data-in-your-app
+      ContentView(
+        readwiseActor: ReadwiseRepository())
     }
   }
 }
