@@ -157,3 +157,13 @@ final class ReadwiseRepository: ActorRepository {
     }
   }
 }
+
+// MARK: - Apple notes repo
+@Observable
+@MainActor
+final class AppleNotesRepository: ActorRepository {
+  typealias Row = AppleNotes
+  func updateState() async throws {
+    // todo: fill out appleNotes UpdateStae
+  }
+}
