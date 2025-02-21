@@ -3,11 +3,10 @@ CREATE TABLE IF NOT EXISTS readwise(
     url TEXT NOT NULL,
     title TEXT,
     created_at DATETIME DEFAULT (CURRENT_TIMESTAMP)
-);
+) STRICT;
 
 CREATE TABLE IF NOT EXISTS api_keys(
     id TEXT PRIMARY KEY NOT NULL,
-    key_name TEXT NOT NULL,
     key_value TEXT NOT NULL,
     created_at DATETIME DEFAULT (CURRENT_TIMESTAMP)
-);
+) STRICT;
