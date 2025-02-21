@@ -1,13 +1,16 @@
 default:
     just --list
 
-pre-commit: format test
+pre-commit: format test static-analysis
 
 format:
     swift format . --recursive --in-place
 
 test:
   tuist test --retry-count 1
+
+static-analysis:
+  rg todo
 
 edit:
   tuist edit
