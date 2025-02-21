@@ -1,0 +1,11 @@
+name: trespanos
+root: ~
+windows:
+  - session:
+      layout: tiled
+      panes:
+          - sh ./currently_watching_files.sh | entr -r -c just test
+          - sh ./currently_watching_files.sh | entr -r -c just static-analysis
+          - just static analysis
+attach: false
+post: tmux -CC attach
