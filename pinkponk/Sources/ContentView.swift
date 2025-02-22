@@ -17,8 +17,7 @@ struct ContentView: View {
     VStack {
       Button("let's get this bread") {
         Task {
-          // todo: make anki card that
-          // task without `do` `catch` silently swallows errors
+          // todo: create an ui element that collets logs
           do {
             try await readwiseActor.updateState()
           } catch {
