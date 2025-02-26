@@ -327,3 +327,6 @@ iOSInjectionProject/
 Derived
 pinkponk.xcodeproj
 pinkponk.xcworkspace
+node_modules
+package.json
+package-lock.json

@@ -30,3 +30,6 @@ update-schema:
 
 delete-derived-data:
     sudo rm -rf ~/Library/Developer/Xcode/DerivedData/
+
+start-console:
+  devbox run npm run claude
