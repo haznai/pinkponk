@@ -24,7 +24,8 @@ let project = Project(
       dependencies: [
         .external(name: "AsyncHTTPClient"),
         .external(name: "InlineSnapshotTesting"),
-        .external(name: "Lighter")
+        .external(name: "Lighter"),
+        .external(name: "AsyncAlgorithms"),
       ],
       settings: Settings.settings(
         base: baseSettings())
