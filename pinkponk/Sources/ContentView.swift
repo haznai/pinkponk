@@ -2,28 +2,18 @@ import SwiftUI
 
 // MARK - ContentView
 struct ContentView: View {
-  // todo: refactor out
-  // todo: make singleton
-  @State private var readwiseActor: ReadwiseRepository
 
-  init(readwiseActor: ReadwiseRepository) {
-    self.readwiseActor = readwiseActor
-  }
+  @State var governor: Governor
 
   var body: some View {
     VStack {
-      ArticleListView(ArticleList: readwiseActor.state)
+      ArticleListView(ArticleList: governor.loadedState)
     }
     VStack {
       Button("let's get this bread") {
         Task {
           // todo: create an ui element that collets logs
-          do {
-            try await readwiseActor.updateState()
-          } catch {
-            print("Error: \(error)")
-            //todo: better error handling
-          }
+          await governor.updateState()
         }
       }
     }.padding(10)
@@ -32,7 +22,7 @@ struct ContentView: View {
 
 // MARK: - Pure List View
 struct ArticleListView: View {
-  let ArticleList: [ReadwiseRepository.Row]
+  let ArticleList: [GovernorRow]
   var body: some View {
     VStack {
       List(ArticleList) { item in
@@ -44,7 +34,5 @@ struct ArticleListView: View {
 }
 
 #Preview {
-  ArticleListView(ArticleList: [
-    ReadwiseRepository.Row(id: "test-id", url: "test-url", title: "test-title", createdAt: nil)
-  ])
+  // todo: preview
 }

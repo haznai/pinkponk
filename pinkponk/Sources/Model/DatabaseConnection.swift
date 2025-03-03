@@ -1,4 +1,5 @@
 import Foundation
+import Lighter
 import SQLite3
 
 // MARK: - Singleton Access for the database
@@ -50,5 +51,3 @@ final class DatabaseConnection {
     }
   }
 }
-
-// todo: remove this header comment
